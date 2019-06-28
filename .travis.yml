@@ -1,16 +1,24 @@
 language: node_js
+
 node_js:
 - '12'
 before_install: true
+
 install:
 - npm install
 before_script: true
+
 script:
 - "./node_modules/.bin/retire"
 - if [ "$TRAVIS_BRANCH" = "master" ]; then "./node_modules/.bin/twly"; fi
 - "./node_modules/.bin/jshint ./src/"
+-
 after_script: true
+
 deploy:
   provider: heroku
   api_key:
     secure: ZU1V7CUMk8auWy2MF6SUCJYRbv6siZRntYIwRwMTTSmtoEc/WtqFdyDwc1FJthsTuSydzHH/VkFDSftXdye4od3ntfIGvfELqElXKCg1aR+LBR+FvOgpOYe+WFAppzLQsWBTnVV/7sdaEvsa+V9zAGOs3te2mHrlIpa3YFEXnrVo5ZCA/k34YWYsHne3wyMVf31/meRjayrgYTNrcpopqksKGfXmS3PFlP9vM17fEABk2gPTHEOXe6+Js/RVCtyzfRp6A1vgRAKjwhNXRgwQu4EETodtRjKLWdJfZoFVZMUnKPTJFE0GTQtyhWYHWTTDTNpPjNGXIjGSW2XcgbcRYH4/Ve3hUQkEUH3MTtiUmdsZ0wA/NBYvurOayBPVtorPi02bKzxhOVA/g/Xxn2KL/NcRxiwkM6bmZ7VEUzkv8AtmxqgeAic1GRCZoBczQP5VwFNAwJW3cS1Rh/ztBDUfAxA4nWQbv+lL+EwoGJ76dufshloMnNB+V9VB+ddTR4zq3sX64MIY3Ja4DzlrUwjpelMUTZ+DgYu56+p98/tvoJ3sz7POk5EW9ZOy0uhKEL0G9tILyUeB6utjiU/UWAX8rWVLYcuqPJn0ZbE0G6XhfL4GhXP783vyji70PSzgTAT4MEePnNwTgCvnbao/aajQVHC1O+ehRQEQ/QlQDdx4cPQ=
+  app: ipssievaluation
+    on:
+      repo: Rizvane95140/IPSSI_evaluation

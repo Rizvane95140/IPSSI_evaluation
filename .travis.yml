@@ -14,7 +14,7 @@ install :
 before_script: true
 
 script:
-  - ./node_modules/.bin/retire
+  - ./node_modules/.bin/retire.js
 
 after_script: true
 

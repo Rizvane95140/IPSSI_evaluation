@@ -13,7 +13,8 @@ install :
 
 before_script: true
 
-script: true
+script:
+  - ./node_modules/.bin/jshint ./src
 
 after_script: true
 
